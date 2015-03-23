@@ -8,16 +8,20 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class MyMenu extends JMenuBar{
-   
-	JMenu menu1;
-	JMenuItem item1_1;
-	JMenuItem item1_2;
-	JMenu menu2;
-	JMenuItem item2_1;
-	JMenuItem item2_2;
-   
-	public MyMenu(){
+	
+	private DividableContainer owner;
+	
+	private JMenu menu1;
+	private JMenuItem item1_1;
+	private JMenuItem item1_2;
+	private JMenu menu2;
+	private JMenuItem item2_1;
+	private JMenuItem item2_2;
+	
+	public MyMenu(DividableContainer ownerParam){
 		super();
+		
+		this.owner=ownerParam;
 		
 		this.menu1=new JMenu("Menu1");
 		this.add(this.menu1);
@@ -37,6 +41,8 @@ public class MyMenu extends JMenuBar{
        
 		this.setVisible(true);
 	}
+	
+	
    
 	private class MyMenuItem extends JMenuItem implements ActionListener {
 		public MyMenuItem(String text) {
