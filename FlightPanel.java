@@ -1,6 +1,8 @@
-
-
-	import javax.swing.JPanel;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseEvent;
+import javax.swing.JPanel;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Graphics;
@@ -19,6 +21,7 @@ public class FlightPanel extends JPanel{
 		this.zoom=zoom;
 		this.x0=x0;
 		this.y0=y0;
+		this.addMouseListener(new FlightPanelListener(this));
 		this.repaint();
 	}
 	public Universe getUniverse(){
@@ -30,5 +33,32 @@ public class FlightPanel extends JPanel{
 		g.fillRect(0, 0, 100, 100);
 		g.setColor(Color.blue);
 		g.fillOval(10, -15, 45, 55);
+	}
+
+	
+	private class FlightPanelListener implements MouseListener{
+		
+		private FlightPanel thePanel;
+		
+		public FlightPanelListener(FlightPanel p){
+			super();
+			this.thePanel=p;
+		}
+		
+		public void mouseEntered(MouseEvent e){
+			//System.out.println("mouse entered");
+		}
+		public void mouseExited(MouseEvent e){
+			//System.out.println("mouse exited");
+		}
+		public void mouseReleased(MouseEvent e){
+			//System.out.println("mouse released");
+		}
+		public void mousePressed(MouseEvent e){
+			//System.out.println("mouse pressed");
+		}
+		public void mouseClicked(MouseEvent e){
+			//System.out.println("mouse clicked");
+		}
 	}
 }
